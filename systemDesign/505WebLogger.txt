@@ -1,0 +1,6 @@
+lintcode 505 web logger
+因为 timestamp 是递增的, 所以我们可以用一个队列储存所有的记录.
+
+hit(timestamp) 直接将 timestamp 放到队尾
+get_hit_count_in_last_5_minutes(timestamp) 弹出队首, 直到队首元素与 timestamp 差距在300内为止, 返回队列大小即可
+其中, 弹出元素的过程可以优化, 使用二分查找确定最大的小于 timestamp - 300 的元素.!!!
